@@ -6,6 +6,7 @@ import com.predic8.stock.event.Operation;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -25,9 +26,8 @@ public class StockRestController {
 	}
 
 	@GetMapping
-	public List<Stock> index() {
-		// Todo
-		return null;
+	public Collection<Stock> index() {
+		return stocks.values();
 	}
 
 	@GetMapping("/count")
